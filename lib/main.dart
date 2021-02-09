@@ -1,9 +1,9 @@
 
 
 import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 // import 'package:flutter/rendering.dart';
 
 void main() {
@@ -99,7 +99,7 @@ class _TestWidgetState extends State<TestWidget> {
               Column(
                 //map function works like same as js map and a children accepts a list so converto to list
                 children:quotes.map((quote){
-                    return Text(quote);
+                    return QuoteCard(quote: quote,);
                 }).toList(),
               ),
             ],
@@ -121,6 +121,7 @@ class _TestWidgetState extends State<TestWidget> {
     }
   }
 
-  
+
+
 
 
