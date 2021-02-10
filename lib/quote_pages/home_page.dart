@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'dart:collection';
 import '../quote.dart';
 import '../quote_card.dart';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
+import 'dart:convert';
 
 
 class TestWidget extends StatefulWidget {
@@ -18,7 +19,8 @@ class _TestWidgetState extends State<TestWidget> {
     Quote(qoute: "readers are leaders",author:"alison"),
   ];
   void getData() async{
-      http.Response  res = await http.get('https://jsonplaceholder.typicode.com/todos/1');
+      Response  res = await get('https://jsonplaceholder.typicode.com/todos/1');
+      Map data = jsonDecode(res.body);
   }
 
   @override
